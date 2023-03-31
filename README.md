@@ -2,7 +2,7 @@
 
 [![license: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-A Python program to test whether a given graph is a k-median graph.
+A Python program to test whether a given graph is a $k$-median graph.
 
 ## Installation
 
@@ -17,10 +17,13 @@ The program requires Python 3.7 or higher.
 
 ## Usage and description
 
-A graph G is a <em>k-median graph</em> if there are k vertices m_1,...,m_k
-such that for all vertices u,v in G it holds that |I(m_i,u)\cap I(m_i,v)\cap I(u,v)|=1$,
-1 ≤ i ≤ k. Every median graph on n vertices is, thus, an n-median graph.
-This programs allows to quickly test if a given graph is a k-median graph and to determine the k.
+A graph $G$ is a <em>k-median graph</em> if there are $k$ vertices $\mu_1,\dots,\mu_k\in V(G)$
+such that, for all
+          $u,v\in V(G)$, it holds that $|I(\mu_i,u)\cap I(\mu_i,v)\cap I(u,v)|=1$,
+          $1\leq i\leq k$ where where $I(x,y)$ denotes the set
+          of all vertices that lie on shortest paths connecting $x$ and $y$.
+ Every median graph on $n$ vertices is, thus, an $n$-median graph.
+This programs allows to quickly test if a given graph is a $k$-median graph and to determine the integer $k$.
 
 ## Citation and references
 
