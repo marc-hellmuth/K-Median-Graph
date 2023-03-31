@@ -17,12 +17,10 @@ The program requires Python 3.7 or higher.
 
 ## Usage and description
 
+For a graph $G$ and vertices $x$ and $y$, denote with $I(x,y)$ the set of all vertices that lie on shortest paths connecting $x$ and $y$.
 A graph $G$ is a <em>k-median graph</em> if there are $k$ vertices $\mu_1,\dots,\mu_k\in V(G)$
 such that, for all
-          $u,v\in V(G)$, it holds that $|I(\mu_i,u)\cap I(\mu_i,v)\cap I(u,v)|=1$,
-          $1\leq i\leq k$ where where $I(x,y)$ denotes the set
-          of all vertices that lie on shortest paths connecting $x$ and $y$.
- Every median graph on $n$ vertices is, thus, an $n$-median graph.
+          $u,v\in V(G)$, it holds that $|I(\mu_i,u)\cap I(\mu_i,v)\cap I(u,v)|=1$. Every median graph on $n$ vertices is, thus, an $n$-median graph.
 This programs allows to quickly test if a given graph is a $k$-median graph and to determine the integer $k$.
 
 ## Citation and references
