@@ -93,7 +93,6 @@ G = nx.Graph()
 ####	  7	---	6
 #### copy in Q4 via (add +10)
 
-
 #Q3-
 G.add_edge(0, 1)
 G.add_edge(1, 2)
@@ -131,34 +130,36 @@ G.add_edge(2, 6)
 
 
 
+if(not(nx.is_connected(G))): 
+	print("G not connected and, thus, no k-median graph")
 
+else:
+	nodes = G.nodes
+	num_nodes = len(nodes)
+	dist = np.zeros((len(nodes), len(nodes)), dtype=int)
+	init_distances(G,dist)
 
-nodes = G.nodes
-num_nodes = len(nodes)
-dist = np.zeros((len(nodes), len(nodes)), dtype=int)
-init_distances(G,dist)
+	medico_test = np.zeros((len(nodes)), dtype=int)
+	for i, u in enumerate(nodes):
+		medico_test[i] = 0
 
-medico_test = np.zeros((len(nodes)), dtype=int)
-for i, u in enumerate(nodes):
-	medico_test[i] = 0
+	find_medico(G, dist, medico_test)
 
-find_medico(G, dist, medico_test)
+	count_medico_vertices=0
+	print(" ** medico vertices are: **")
+	for i, u in enumerate(nodes):
+		if(medico_test[i] == (num_nodes-1)*(num_nodes-2)/2): # for i, u  |I(u,v,w)|=1 for all pairs v,w
+			count_medico_vertices += 1
+			print(u)
 
-count_medico_vertices=0
-print(" ** medico vertices are: **")
-for i, u in enumerate(nodes):
-	if(medico_test[i] == (num_nodes-1)*(num_nodes-2)/2): # for i, u  |I(u,v,w)|=1 for all pairs v,w
-		count_medico_vertices += 1
-		print(u)
+	if(count_medico_vertices == num_nodes):
+		print("G is median graph")
 
-if(count_medico_vertices == num_nodes):
-	print("G is median graph")
+	elif(count_medico_vertices == 0):
+		print("G is no k-median graph, k>0")
 
-elif(count_medico_vertices == 0):
-	print("G is no k-median graph, k>0")
-
-else: 
-	print("G is proper", count_medico_vertices,"-median graph (but no median graph)")	
+	else: 
+		print("G is proper", count_medico_vertices,"-median graph (but no median graph)")	
 
 
 
