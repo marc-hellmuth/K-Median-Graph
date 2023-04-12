@@ -25,7 +25,7 @@ This programs allows to quickly test if a given graph is a $k$-median graph and 
 
 ## Citation and references
 
-If you use this prgram in your project or code from it, please consider citing:
+If you use this program in your project or code from it, please consider citing:
 
 *[1]  TBA.
 
