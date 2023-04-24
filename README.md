@@ -27,7 +27,7 @@ This programs allows to quickly test if a given graph is a $k$-median graph and 
 
 If you use this program in your project or code from it, please consider citing:
 
-*[1]  TBA.
+[1]  On a generalization of median graphs: $k$-median graphs,  M. Hellmuth, S. Thekkumpadan Puthiyaveedu, arXiv:2304.06453, 2023
 
 Please report any bugs and questions in the [Issues](https://github.com/marc-hellmuth/K-Median-Graph/issues) section.
 
